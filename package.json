@@ -1,0 +1,35 @@
+{
+  "name": "backbone-ripple",
+  "version": "0.1.0",
+  "description": "Backbone.sync plugin for interacting with Ripple REST.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenzeiler/backbone-sync-ripple"
+  },
+  "keywords": [
+    "ripple",
+    "backbone",
+    "model",
+    "sync"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenzeiler/backbone-sync-ripple/issues"
+  },
+  "homepage": "https://github.com/stevenzeiler/backbone-sync-ripple",
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "bluebird": "^2.3.2",
+    "superagent": "^0.18.2",
+    "jquery": "^2.1.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
+}

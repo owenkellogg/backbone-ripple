@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Account = require(__dirname+'/../../lib/account');
+var Account = require(__dirname+'/../lib/account');
 
 describe('A Ripple account', function() {
 
@@ -8,10 +8,18 @@ describe('A Ripple account', function() {
   });
 
   it('should look up the ripple address by name', function(done) {
-    var account = new Account();
+    var account = new Account({ name: 'stevenzeiler' });
 
     console.log(account);
-    account.lookupName(rippleName);
+    account.url = function() {
+      return 'https://id.ripple.com/v1/authinfo?username='+this.get('name')
+    }
+    account.fetch({
+      success: function() {
+        console.log("account fetched");
+      }
+    })
+    //account.lookupName(rippleName);
     /*
     account.lookupName(rippleName).then(function() {
       assert(account.get('address')); 

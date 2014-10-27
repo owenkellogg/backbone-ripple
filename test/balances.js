@@ -1,9 +1,10 @@
+var Account = require(__dirname+'/../lib/account');
 
 describe('account balances', function() {
 
   before(function(done) {
     account = new Account();
-    account.lookup('stevenzeiler').then(done);
+    account.lookupName('stevenzeiler').then(done);
   })
 
   it('should get them', function(done) {
@@ -12,6 +13,7 @@ describe('account balances', function() {
     })
 
     balances.fetch().then(function() {
+      console.log('fetched balances');
       console.log(balances.models);
       done();
     });
